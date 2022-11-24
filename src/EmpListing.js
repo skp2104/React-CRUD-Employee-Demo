@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {CSVLink} from "react-csv";
 //export
 
-function Exportexcel(){
+/*function Exportexcel(){
 
     const[empdata,setEmpData]=useState([]);
 
@@ -23,7 +23,7 @@ function Exportexcel(){
 
     getEmpData();
 
-},[]);}
+},[]);}*/
 const EmpListing = () => {
     const [empdata, empdatachange] = useState(null);
     const navigate = useNavigate();
