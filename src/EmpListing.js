@@ -1,6 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {CSVLink} from "react-csv";
+//export
 
+function Exportexcel(){
+
+    const[empdata,setEmpData]=useState([]);
+
+    useEffect(() => {
+
+    const getEmpData=async() => {
+
+        const empreq=await fetch("http://localhost:8000/employee");
+
+        const empres=await empreq.json();
+
+        console.log(empres);
+
+        setEmpData(empres);
+
+    }
+
+    getEmpData();
+
+},[]);}
 const EmpListing = () => {
     const [empdata, empdatachange] = useState(null);
     const navigate = useNavigate();
@@ -49,7 +72,7 @@ const EmpListing = () => {
                         <Link to="employee/create" className="btn btn-success">Add New (+)</Link>
                     </div>
                     <div className="divbtn">
-                        <button className="btn btn-primary">Export(↓)</button>
+                       <CSVlINK data={empdata} filename="Employee Data" className="btn btn-primary">Export(⬇)</CSVLink>
                     </div>
                     <div className="divbtn">
                         <button className="btn btn-warning">Select All(*)</button>
@@ -60,7 +83,7 @@ const EmpListing = () => {
                     <table className="table table-bordered table table-hover fixed_header">
                         <thead className="bg-dark text-white stickheader">
                             <tr>
-                            <td></td>
+                          
                                 <td>ID</td>
                                 <td>Name</td>
                                 <td>Email</td>
@@ -74,9 +97,8 @@ const EmpListing = () => {
                                 empdata.map(item => (
                                     
                                     <tr key={item.id}>
-                                        <td><input type="checkbox"/>
-                                    </td>
-                                        <td>{item.id}</td>
+                                       
+                                        <td><input type="checkbox"/> {item.id}</td>
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
                                         <td>{item.phone}</td>
