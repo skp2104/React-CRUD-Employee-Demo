@@ -1,18 +1,34 @@
 {
   "employee": [
     {
-      "name": "dfgf",
-      "email": "szgfg",
-      "phone": "fdgfdg",
-      "active": true,
+      "id": 1,
+      "name": "Divya Verma",
+      "email": "divya12345@gmail.com",
+      "phone": "9045363409"
+    },
+    {
+      "name": "Sameer",
+      "email": "sameer123@gmail.com",
+      "phone": "6743439253",
       "id": 2
     },
     {
-      "name": "Tausif",
-      "email": "asdasda",
-      "phone": "343243",
-      "active": true,
+      "name": "Avya",
+      "email": "avya467@gmail.com",
+      "phone": "9576839588",
       "id": 3
+    },
+    {
+      "name": "Rajveer",
+      "email": "rajveer.singh@gmail.com",
+      "phone": "6753215642",
+      "id": 4
+    },
+    {
+      "name": "Priyanka Singh",
+      "email": "priyanka.singh122@gmail.com",
+      "phone": "7620923541",
+      "id": 5
     }
   ]
 }
